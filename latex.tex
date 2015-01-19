@@ -5,6 +5,8 @@
 \documentclass[a4paper,12pt]{book}
 \XeTeXlinebreaklocale ``zh''
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+\let\cleardoublepage\relax % 清除空白页,自己决定
+\usepackage{hyperref}
 \usepackage{color}              % 彩色
 \usepackage{xcolor}             % 彩色
 \usepackage{listings}           % 代码风格
@@ -42,9 +44,20 @@
   backgroundcolor=\color{white},      % 背景色 需要 \usepackage{color}
 %  escapeinside={/*@}{@*/}     % 添加注释，暂时离开
 }
+%\newcommand\mybooktitle{Sqlite3.8.8 Source Code}
+%\newcommand\BookTitle{Sqlite3.8.8 Source Code}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE]{\normalfont\small\rmfamily\nouppercase{\leftmark}}
+\fancyhead[LO]{\normalfont\small\rmfamily\nouppercase{\rightmark}}
+\fancyhead[LE,RO]{\thepage}
+\fancyfoot[LE,LO]{Code2PDF  by \href{http://ilz.me}{LiuZ}}
+\fancyfoot[RE,RO]{\url{https://github.com/liuzheng712/code2pdf}}
 
-
-\lstinputlisting[language=Tex]{latex.tex}
+\tableofcontents\newpage
+\input{program/program.tex}
+%\chapter{latex.tex}
+%\lstinputlisting[language=Tex]{latex.tex}
 
 
 \end{document}

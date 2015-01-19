@@ -1,4 +1,7 @@
 all:
+	cd ./program/
+	bash ./program/makeprogram.sh
+	cd ..
 	xelatex -synctex=1 -interaction=nonstopmode latex.tex
 	xelatex -synctex=1 -interaction=nonstopmode latex.tex
 
